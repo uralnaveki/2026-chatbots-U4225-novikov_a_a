@@ -1,0 +1,19 @@
+# Секреты: токен Telegram и ключ LLM
+.env
+
+# Виртуальное окружение
+.venv/
+venv/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+
+# Данные бота (кэш проектов и последняя задача)
+data.json
+
+# Редакторы и система
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
