@@ -47,7 +47,7 @@
 | Проблема | Причина | Как решили |
 | --- | --- | --- |
 | `failed to connect to the docker API ... dockerDesktopLinuxEngine` при `docker compose build` | Docker Desktop установлен, но не запущен | запустить Docker Desktop и дождаться статуса «Engine running» |
-| `failed to calculate checksum ... "/requirements.txt": not found` | в папке, из которой запускалась сборка, не было файла `requirements.txt` | **[проверьте и уточните: файл скопирован в папку проекта]** |
+| `failed to calculate checksum ... "/requirements.txt": not found` | в папке, из которой запускалась сборка, не было файла `requirements.txt` | 
 | `OAuth callback timed out` при `docker compose run --rm bot ticktick auth login` | после входа TickTick возвращает браузер на `localhost`, то есть на компьютер, а принимать ответ должен CLI внутри изолированного контейнера | вход выполнен на компьютере, папка `.config\ticktick-cli` скопирована в том `data\home\.config\ticktick-cli`; проверка `project list --json` показала проекты |
 | Две команды, вставленные в одну строку, создали лишнюю папку | `mkdir` принял вторую команду как список имён папок | лишняя папка удалена, команды вводятся по одной |
 | Примеры из задания (webhook, ngrok, `pandas`, `requests`) не подходят | бот работает через polling, использует `httpx` и не использует `pandas` | выбран деплой без webhook, список зависимостей оставлен рабочим |
