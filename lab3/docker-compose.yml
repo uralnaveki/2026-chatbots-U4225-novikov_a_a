@@ -1,0 +1,18 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    # Эти значения важнее .env: данные должны лежать в томе ./data, иначе пропадут при пересборке.
+    environment:
+      HOME: /data/home
+      DATA_FILE: /data/data.json
+      DB_FILE: /data/bot.db
+    volumes:
+      - ./data:/data
+    restart: unless-stopped      # поднимается сам после сбоя и перезагрузки
+    logging:                     # логи не разрастаются бесконечно
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

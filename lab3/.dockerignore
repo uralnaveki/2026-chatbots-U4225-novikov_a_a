@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.db
+*.log
+data/
+data.json
+.git/
+*.md
+tasks_example.csv
